@@ -11,13 +11,9 @@ struct obj_t
 
 uint8_t obj_new(obj_t **obj)
 {
-	obj_t *p = *obj;
-	if (p)
-		return -1;
-
-	p = calloc(1, sizeof(obj_t));
+	obj_t *p = calloc(1, sizeof(obj_t));
 	if (!p)
-	     return -2;
+	     return -1;
 
 	p->type = OBJ_UNSET;
 
