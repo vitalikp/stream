@@ -15,12 +15,11 @@ uint8_t obj_new(obj_t **obj)
 	if (p)
 		return -1;
 
-	p = malloc(sizeof(obj_t));
+	p = calloc(1, sizeof(obj_t));
 	if (!p)
 	     return -2;
 
 	p->type = OBJ_UNSET;
-	p->value = NULL;
 
 	*obj = p;
 
