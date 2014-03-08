@@ -11,9 +11,13 @@ struct obj_t
 
 uint8_t obj_new(obj_t **obj)
 {
-	obj_t *p = malloc(sizeof(obj_t));
+	obj_t *p = *obj;
+	if (p)
+		return -1;
+
+	p = malloc(sizeof(obj_t));
 	if (!p)
-	     return -1;
+	     return -2;
 
 	p->type = OBJ_UNSET;
 	p->value = NULL;
