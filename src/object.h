@@ -1,3 +1,7 @@
+
+#ifndef __OBJECT_H_
+#define __OBJECT_H_
+
 #include <stdint.h>
 
 enum type_obj
@@ -13,6 +17,7 @@ typedef struct obj_t obj_t;
 
 
 uint8_t obj_new(obj_t **obj);
+void obj_destroy(obj_t **obj);
 
 uint8_t obj_get_type(obj_t *obj);
 
@@ -22,3 +27,5 @@ void obj_get_int(obj_t *obj, uint32_t *value);
 uint8_t obj_set_int(obj_t *obj, uint32_t value);
 
 void obj_unset(obj_t *obj);
+
+#endif

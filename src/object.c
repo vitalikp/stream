@@ -23,6 +23,26 @@ uint8_t obj_new(obj_t **obj)
 	return 0;
 }
 
+void obj_destroy(obj_t **obj)
+{
+	obj_t *p = *obj;
+	switch (p->type)
+	{
+		case OBJ_STRING:
+		case OBJ_INTEGER:
+			free(p->value);
+			break;
+		case OBJ_LIST:
+			// TODO implement destroy list
+			break;
+		case OBJ_MAP:
+			// TODO implement destroy map
+			break;
+	}
+
+	*obj = NULL;
+}
+
 uint8_t obj_get_type(obj_t *obj)
 {
 	return obj->type;
