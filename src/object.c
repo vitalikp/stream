@@ -39,6 +39,8 @@ void obj_destroy(obj_t **obj)
 			break;
 	}
 
+	free(p);
+
 	*obj = NULL;
 }
 
