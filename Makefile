@@ -1,6 +1,7 @@
 
 PROJNAME = stream
 SOURCES  = $(wildcard src/*.c)
+SOURCES  += $(wildcard src/*/*.c)
 OBJECTS  = $(SOURCES:.c=.o)
 
 #CFLAGS	+= -ggdb -DDEBUG
