@@ -61,6 +61,7 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
 	     return -1;
 
 	memcpy(p, value, len);
+	memset(p + len, 0, 1);
 	obj->value = p;
 
 	return 0;
