@@ -9,17 +9,15 @@ struct obj_t
 	void       *value;
 };
 
-uint8_t obj_new(obj_t **obj)
+obj_t* obj_new(void)
 {
 	obj_t *p = calloc(1, sizeof(obj_t));
 	if (!p)
-	     return -1;
+	     return NULL;
 
 	p->type = OBJ_UNSET;
 
-	*obj = p;
-
-	return 0;
+	return p;
 }
 
 void obj_destroy(obj_t **obj)

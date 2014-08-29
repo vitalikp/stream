@@ -16,7 +16,7 @@ enum type_obj
 typedef struct obj_t obj_t;
 
 
-uint8_t obj_new(obj_t **obj);
+obj_t* obj_new(void);
 void obj_destroy(obj_t **obj);
 
 uint8_t obj_get_type(obj_t *obj);
