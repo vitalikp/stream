@@ -3,7 +3,7 @@ PROJNAME = stream
 SOURCES  = $(wildcard src/*.c)
 OBJECTS  = $(SOURCES:.c=.o)
 
-#CFLAGS	+= -ggdb
+#CFLAGS	+= -ggdb -DDEBUG
 CFLAGS  += -std=c99
 CFLAGS  += -Isrc
 
