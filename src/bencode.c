@@ -2,6 +2,20 @@
 #include "bencode.h"
 
 
+int bc_decode_type(char c)
+{
+	if (c == 'i')
+		return BC_INTEGER;		// integer
+
+	if (c == 'l')
+		return BC_LIST;			// list
+
+	if (c == 'd')
+		return BC_DICT;			// dictionary
+
+	return BC_STRING;			// string
+}
+
 int bc_read_string(FILE *in, char **str)
 {
 	uint32_t size;
