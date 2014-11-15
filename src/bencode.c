@@ -15,10 +15,8 @@ int bc_read_string(FILE *in, char **str)
 	if (!p)
 		return -3;
 
-	int i=0;
-	while (i<size)
-	     p[i++] = getc(in);
-	p[i] = '\0';
+	fread(p, 1, size, in);
+	p[size] = '\0';
 
 	*str = p;
 
@@ -48,8 +46,9 @@ void bc_read_list(FILE *in)
 	          break;
 
 	     ungetc(c, in);
+
 	     bc_read(in);
-	     
+
 	     printf(",");
 	}
 	printf("]\n");
@@ -110,6 +109,7 @@ void bc_read(FILE *in)
 	              ungetc(c, in);
 	              bc_read_string(in, &str);
 	              printf("'%s'", str);
+
 	              if (str)
 	                   free(str);
 	         }
