@@ -12,6 +12,8 @@ int bc_read_string(FILE *in, char **str)
 	     return -2;
 
 	char *p = malloc(size+1);
+	if (!p)
+		return -3;
 
 	int i=0;
 	while (i<size)
