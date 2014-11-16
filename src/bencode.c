@@ -48,14 +48,22 @@ int bc_read_string(char *in, char **str)
 	return i+1;
 }
 
-int bc_read_int(FILE *in, int *val)
+int bc_read_int(char *in, int *val)
 {
 	uint32_t p = 0;
 
-	if (fscanf(in, "%de", &p) != 1)
-	     return -1;
+	size_t i = 0;
+	while (in[i] != BC_EOF)
+	{
+		p *= 10;
+		if (in[i] < '0' || in[i] > '9')
+			return 0;
+
+		p += in[i] - '0';
+		i++;
+	}
 
 	*val = p;
 
-	return 0;
+	return i+1;
 }
