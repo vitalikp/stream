@@ -67,33 +67,3 @@ void bc_read_list(FILE *in)
 	}
 	printf("]\n");
 }
-
-void bc_read_dict(FILE *in)
-{
-	char c;
-
-	printf("\n{\n");
-	while ((c = getc(in)) != EOF)
-	{
-	     if (c == 'e')
-	          break;
-
-	     // string key
-	     char *key = NULL;
-	     ungetc(c, in);
-	     if (bc_read_string(in, &key) != 0)
-	     {
-	          printf("fail read key!\n");
-	          break;
-	     }
-
-	     // value
-	     printf("\t<%s>:\t", key);
-
-	     bc_read(in);
-
-	     printf("\n");
-	}
-	printf("}\n");
-}
-
