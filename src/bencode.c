@@ -45,7 +45,7 @@ int bc_read_string(char *in, char **str)
 
 	*str = p;
 
-	return i+1;
+	return i;
 }
 
 int bc_read_int(char *in, int *val)
@@ -65,5 +65,5 @@ int bc_read_int(char *in, int *val)
 
 	*val = p;
 
-	return i+1;
+	return i;
 }
