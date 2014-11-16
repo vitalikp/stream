@@ -97,36 +97,3 @@ void bc_read_dict(FILE *in)
 	printf("}\n");
 }
 
-void bc_read(FILE *in)
-{
-	char c;
-
-	switch ((c = getc(in)))
-	{
-	     case 'i':// integer
-	         {
-	              int val;
-	              bc_read_int(in, &val);
-	              printf("%d", val);
-	         }
-	         break;
-	     case 'l':// list
-	         bc_read_list(in);
-	         break;
-	     case 'd':// dictionary
-	         bc_read_dict(in);
-	         break;
-	     default: // string
-	         if (c>='0' && c<='9')
-	         {
-	              char *str = NULL;
-	              ungetc(c, in);
-	              bc_read_string(in, &str);
-	              printf("'%s'", str);
-
-	              if (str)
-	                   free(str);
-	         }
-	         break;
-	}
-}

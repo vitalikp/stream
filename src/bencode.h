@@ -17,6 +17,5 @@
 
 int bc_decode_type(char c);
 void bc_read_dict(FILE *in);
-void bc_read(FILE *in);
 
 #endif
