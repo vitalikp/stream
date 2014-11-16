@@ -48,22 +48,3 @@ int bc_read_int(FILE *in, int *val)
 
 	return 0;
 }
-
-void bc_read_list(FILE *in)
-{
-	char c;
-	
-	printf("[");
-	while ((c = getc(in)) != EOF)
-	{
-	     if (c == 'e')
-	          break;
-
-	     ungetc(c, in);
-
-	     bc_read(in);
-
-	     printf(",");
-	}
-	printf("]\n");
-}
