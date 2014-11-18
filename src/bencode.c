@@ -53,6 +53,17 @@ int bc_read_int(char *in, int *val)
 	uint32_t p = 0;
 
 	size_t i = 0;
+	if (in[i] == '-')
+	{
+		if (in[i+1] == BC_EOF)		// if '-'
+			return 0;
+
+		if (in[i+1] == '0')			// if '-0'
+			return 0;
+
+		i++;
+	}
+
 	while (in[i] != BC_EOF)
 	{
 		p *= 10;
@@ -62,6 +73,9 @@ int bc_read_int(char *in, int *val)
 		p += in[i] - '0';
 		i++;
 	}
+
+	if (in[0] == '-')
+		p = -p;
 
 	*val = p;
 
