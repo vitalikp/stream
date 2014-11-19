@@ -73,6 +73,7 @@ int bc_read_int(char *in, int *val)
 		p += in[i] - '0';
 		i++;
 	}
+	i++;
 
 	if (in[0] == '-')
 		p = -p;
