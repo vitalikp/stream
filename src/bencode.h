@@ -16,6 +16,6 @@
 
 int bc_decode_type(char c);
 size_t bc_read_string(char *in, char **str);
-int bc_read_int(char *in, int *val);
+size_t bc_read_int(char *in, int *val);
 
 #endif

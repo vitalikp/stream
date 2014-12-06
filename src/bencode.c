@@ -51,7 +51,7 @@ size_t bc_read_string(char *in, char **str)
 	return i;
 }
 
-int bc_read_int(char *in, int *val)
+size_t bc_read_int(char *in, int *val)
 {
 	uint32_t p = 0;
 
