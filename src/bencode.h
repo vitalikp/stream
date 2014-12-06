@@ -8,10 +8,10 @@
 #include <string.h>
 
 
-#define BC_STRING		0x1
-#define BC_INTEGER		0x2
-#define BC_LIST			0x3
-#define BC_DICT			0x4
+#define BC_STRING		0x1			// <len>:<string>
+#define BC_INTEGER		0x2			// i<integer>e
+#define BC_LIST			0x3			// l<object1>...<objectN>e
+#define BC_DICT			0x4			// d<string><object1>...<string><objectN>e
 
 #define BC_EOF			'e'
 
