@@ -3,9 +3,7 @@
 #define __BENCODE_H_
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdint.h>
-#include <string.h>
 
 
 #define BC_STRING		0x1			// <len>:<string>
