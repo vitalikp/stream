@@ -42,16 +42,7 @@ size_t bc_read_string(char *in, char **str)
 	size_t size = 0;
 
 	size_t i = 0;
-	while (in[i] != ':')
-	{
-		size *= 10;
-		if (in[i] < '0' || in[i] > '9')
-			return 0;
-
-		size += in[i] - '0';
-		i++;
-	}
-	i++;
+	i += bc_read_lenstr(in, &size);
 
 	if (size < 1)
 		return 0;
