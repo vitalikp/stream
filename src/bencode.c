@@ -16,6 +16,27 @@ int bc_decode_type(char c)
 	return BC_STRING;			// string
 }
 
+size_t bc_read_lenstr(char *in, size_t *len)
+{
+	size_t size = 0;
+
+	size_t i = 0;
+	while (in[i] != ':')
+	{
+		size *= 10;
+		if (in[i] < '0' || in[i] > '9')
+			return 0;
+
+		size += in[i] - '0';
+		i++;
+	}
+	i++;
+
+	*len = size;
+
+	return i;
+}
+
 size_t bc_read_string(char *in, char **str)
 {
 	size_t size = 0;
