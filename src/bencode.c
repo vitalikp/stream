@@ -39,11 +39,14 @@ int bc_read_string(char *in, char **str)
 	if (!p)
 		return 0;
 
-	memcpy(p, in + i, size);
-	i += size;
+	*str = p;
 	p[size] = '\0';
 
-	*str = p;
+	while (size > 0)
+	{
+		*(p++) = in[i++];
+		size--;
+	}
 
 	return i;
 }
