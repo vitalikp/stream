@@ -4,13 +4,14 @@
 #include "object.h"
 
 
-obj_t* obj_new(void)
+obj_t* obj_new(uint8_t type)
 {
-	obj_t *p = calloc(1, sizeof(obj_t));
+	obj_t *p = malloc(sizeof(obj_t));
 	if (!p)
 	     return NULL;
 
-	p->type = OBJ_UNSET;
+	p->type = type;
+	p->value = NULL;
 
 	return p;
 }

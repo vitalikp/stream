@@ -22,7 +22,7 @@ struct obj_t
 };
 
 
-obj_t* obj_new(void);
+obj_t* obj_new(uint8_t type);
 void obj_destroy(obj_t **obj);
 
 void obj_get_str(obj_t *obj, char **value);
