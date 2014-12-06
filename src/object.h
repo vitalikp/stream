@@ -26,6 +26,4 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value);
 void obj_get_int(obj_t *obj, uint32_t *value);
 uint8_t obj_set_int(obj_t *obj, uint32_t value);
 
-void obj_unset(obj_t *obj);
-
 #endif

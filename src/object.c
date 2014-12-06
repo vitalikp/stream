@@ -85,22 +85,3 @@ uint8_t obj_set_int(obj_t *obj, uint32_t value)
 
 	return 0;
 }
-
-void obj_unset(obj_t *obj)
-{
-	switch (obj->type)
-	{
-		case OBJ_STRING:
-		case OBJ_INTEGER:
-			free(obj->value);
-			break;
-		case OBJ_LIST:
-			// TODO implement unset list
-			break;
-		case OBJ_MAP:
-			// TODO implement unset map
-			break;
-	}
-
-	obj->type = OBJ_UNSET;
-}
