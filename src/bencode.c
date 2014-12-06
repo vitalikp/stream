@@ -16,7 +16,7 @@ int bc_decode_type(char c)
 	return BC_STRING;			// string
 }
 
-int bc_read_string(char *in, char **str)
+size_t bc_read_string(char *in, char **str)
 {
 	uint32_t size = 0;
 
