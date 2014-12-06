@@ -37,11 +37,6 @@ void obj_destroy(obj_t **obj)
 	*obj = NULL;
 }
 
-uint8_t obj_get_type(obj_t *obj)
-{
-	return obj->type;
-}
-
 void obj_get_str(obj_t *obj, char **value)
 {
 	*value = obj->value;
