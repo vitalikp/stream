@@ -18,7 +18,7 @@ int bc_decode_type(char c)
 
 size_t bc_read_string(char *in, char **str)
 {
-	uint32_t size = 0;
+	size_t size = 0;
 
 	size_t i = 0;
 	while (in[i] != ':')
