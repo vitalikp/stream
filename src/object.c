@@ -3,11 +3,6 @@
 
 #include "object.h"
 
-struct obj_t
-{
-	uint8_t    type;
-	void       *value;
-};
 
 obj_t* obj_new(void)
 {
