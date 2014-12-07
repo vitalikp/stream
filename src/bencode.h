@@ -5,6 +5,7 @@
 #include "object.h"
 
 
+#define BC_DELIM		':'
 #define BC_EOF			'e'
 
 

@@ -21,7 +21,7 @@ size_t bc_read_lenstr(char *in, size_t *len)
 	size_t size = 0;
 
 	size_t i = 0;
-	while (in[i] != ':')
+	while (in[i] != BC_DELIM)
 	{
 		size *= 10;
 		if (in[i] < '0' || in[i] > '9')
