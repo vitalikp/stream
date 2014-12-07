@@ -74,17 +74,3 @@ void obj_get_int(obj_t *obj, uint32_t *value)
 {
 	*value = *(uint32_t*)obj->value;
 }
-
-uint8_t obj_set_int(obj_t *obj, uint32_t value)
-{
-	obj->type = OBJ_INTEGER;
-
-	uint32_t *p = malloc(sizeof(uint32_t));
-	if (!p)
-	     return -1;
-
-	*p = value;
-	obj->value = p;
-
-	return 0;
-}
