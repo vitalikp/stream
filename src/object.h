@@ -5,7 +5,6 @@
 #include <stdint.h>
 
 
-#define OBJ_UNSET		0x0
 #define OBJ_STRING		0x1			// <len>:<string>
 #define OBJ_INTEGER		0x2			// i<integer>e
 #define OBJ_LIST		0x3			// l<object1>...<objectN>e
