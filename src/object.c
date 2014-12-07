@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "object.h"
+#include "types/list.h"
 
 
 obj_t* obj_new(uint8_t type)
@@ -21,6 +22,9 @@ obj_t* obj_new(uint8_t type)
 				return NULL;
 			}
 			break;
+		case OBJ_LIST:
+			p->value = list_new(LIST_CAPACITY);
+			break;
 		default:
 			p->value = NULL;
 	}
@@ -38,7 +42,7 @@ void obj_destroy(obj_t **obj)
 			free(p->value);
 			break;
 		case OBJ_LIST:
-			// TODO implement destroy list
+			list_destroy((list_t**)&(p->value));
 			break;
 		case OBJ_DICT:
 			// TODO implement destroy map
