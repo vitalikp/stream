@@ -30,7 +30,7 @@ obj_t* obj_new(uint8_t type);
 void obj_destroy(obj_t **obj);
 
 void obj_get_str(obj_t *obj, char **value);
-uint8_t obj_set_str(obj_t *obj, size_t len, char *value);
+int obj_set_str(obj_t *obj, size_t len, char *value);
 void obj_get_int(obj_t *obj, uint32_t *value);
 
 #endif

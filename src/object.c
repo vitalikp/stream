@@ -57,7 +57,7 @@ void obj_get_str(obj_t *obj, char **value)
 	*value = obj->value;
 }
 
-uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
+int obj_set_str(obj_t *obj, size_t len, char *value)
 {
 	obj->type = OBJ_STRING;
 
