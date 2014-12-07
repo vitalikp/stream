@@ -2,8 +2,7 @@
 #ifndef __BENCODE_H_
 #define __BENCODE_H_
 
-#include <stdlib.h>
-#include <stdint.h>
+#include "object.h"
 
 
 #define BC_STRING		0x1			// <len>:<string>
