@@ -2,6 +2,7 @@
 #ifndef __OBJECT_H_
 #define __OBJECT_H_
 
+#include <stdlib.h>
 #include <stdint.h>
 
 
