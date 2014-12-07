@@ -40,7 +40,7 @@ void obj_destroy(obj_t **obj)
 		case OBJ_LIST:
 			// TODO implement destroy list
 			break;
-		case OBJ_MAP:
+		case OBJ_DICT:
 			// TODO implement destroy map
 			break;
 	}

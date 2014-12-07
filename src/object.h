@@ -9,7 +9,7 @@
 #define OBJ_STRING		0x1			// <len>:<string>
 #define OBJ_INTEGER		0x2			// i<integer>e
 #define OBJ_LIST		0x3			// l<object1>...<objectN>e
-#define OBJ_MAP			0x4			// d<string><object1>...<string><objectN>e
+#define OBJ_DICT		0x4			// d<string><object1>...<string><objectN>e
 
 
 typedef struct obj_t obj_t;
