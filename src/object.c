@@ -11,7 +11,19 @@ obj_t* obj_new(uint8_t type)
 	     return NULL;
 
 	p->type = type;
-	p->value = NULL;
+	switch (p->type)
+	{
+		case OBJ_INTEGER:
+			p->value = malloc(sizeof(uint32_t));
+			if (!p->value)
+			{
+				free(p);
+				return NULL;
+			}
+			break;
+		default:
+			p->value = NULL;
+	}
 
 	return p;
 }
