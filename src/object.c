@@ -62,12 +62,18 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
 {
 	obj->type = OBJ_STRING;
 
-	void *p = malloc(len + 1);
+	char *p = malloc(len + 1);
 	if (!p)
 	     return -1;
 
-	memcpy(p, value, len);
-	memset(p + len, 0, 1);
+	p[len] = '\0';
+	size_t i = 0;
+	while (len > 0)
+	{
+		*(p++) = value[i++];
+		len--;
+	}
+
 	obj->value = p;
 
 	return 0;
