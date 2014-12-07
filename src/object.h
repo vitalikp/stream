@@ -4,14 +4,13 @@
 
 #include <stdint.h>
 
-enum type_obj
-{
-	OBJ_UNSET,
-	OBJ_STRING,		// <len>:<string>
-	OBJ_INTEGER,		// i<integer>e
-	OBJ_LIST,		// l<object1>...<objectN>e
-	OBJ_MAP			// d<string><object1>...<string><objectN>e
-};
+
+#define OBJ_UNSET		0x0
+#define OBJ_STRING		0x1			// <len>:<string>
+#define OBJ_INTEGER		0x2			// i<integer>e
+#define OBJ_LIST		0x3			// l<object1>...<objectN>e
+#define OBJ_MAP			0x4			// d<string><object1>...<string><objectN>e
+
 
 typedef struct obj_t obj_t;
 
