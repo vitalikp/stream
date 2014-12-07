@@ -65,6 +65,8 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
 	if (!p)
 	     return 0;
 
+	obj->value = p;
+
 	p[len] = '\0';
 	size_t i = 0;
 	while (len > 0)
@@ -72,8 +74,6 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
 		*(p++) = value[i++];
 		len--;
 	}
-
-	obj->value = p;
 
 	return i;
 }
