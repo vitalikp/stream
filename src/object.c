@@ -63,7 +63,7 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
 
 	char *p = malloc(len + 1);
 	if (!p)
-	     return -1;
+	     return 0;
 
 	p[len] = '\0';
 	size_t i = 0;
@@ -75,7 +75,7 @@ uint8_t obj_set_str(obj_t *obj, size_t len, char *value)
 
 	obj->value = p;
 
-	return 0;
+	return i;
 }
 
 void obj_get_int(obj_t *obj, uint32_t *value)
