@@ -21,6 +21,11 @@ struct obj_t
 	void       *value;
 };
 
+static inline void* OBJ_VAL(obj_t *obj)
+{
+	return !obj?NULL:obj->value;
+}
+
 
 obj_t* obj_new(uint8_t type);
 void obj_destroy(obj_t **obj);
