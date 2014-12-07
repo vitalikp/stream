@@ -5,15 +5,15 @@
 int bc_decode_type(char c)
 {
 	if (c == 'i')
-		return BC_INTEGER;		// integer
+		return OBJ_INTEGER;		// integer
 
 	if (c == 'l')
-		return BC_LIST;			// list
+		return OBJ_LIST;		// list
 
 	if (c == 'd')
-		return BC_DICT;			// dictionary
+		return OBJ_DICT;		// dictionary
 
-	return BC_STRING;			// string
+	return OBJ_STRING;			// string
 }
 
 size_t bc_read_lenstr(char *in, size_t *len)
