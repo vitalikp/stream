@@ -2,7 +2,7 @@
 #include "bencode.h"
 
 
-int bc_decode_type(char c)
+uint8_t bc_decode_type(char c)
 {
 	if (c == 'i')
 		return OBJ_INTEGER;		// integer
