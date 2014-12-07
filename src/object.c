@@ -1,4 +1,3 @@
-#include <string.h>
 
 #include "object.h"
 #include "types/list.h"
